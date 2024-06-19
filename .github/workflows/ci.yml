@@ -10,15 +10,6 @@ jobs:
   test-and-lint:
     runs-on: ubuntu-latest
 
-    services:
-      db:
-        image: postgres:latest
-        ports: ['5432:5432']
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: test_db
-
     steps:
     - uses: actions/checkout@v3
 
@@ -28,47 +19,47 @@ jobs:
         ruby-version: 3.2.3
 
     - name: Install dependencies for Service A
+      working-directory: service_a
       run: |
-        cd service_a
         gem install bundler
         bundle install --jobs 4 --retry 3
 
     - name: Set up database for Service A
+      working-directory: service_a
       run: |
-        cd service_a
         cp config/database.yml.ci config/database.yml
         bin/rails db:create
         bin/rails db:schema:load
 
     - name: Run tests for Service A
+      working-directory: service_a
       run: |
-        cd service_a
         bundle exec rspec
 
     - name: Run static analysis for Service A
+      working-directory: service_a
       run: |
-        cd service_a
         bundle exec rubocop
 
     - name: Install dependencies for Service B
+      working-directory: service_b
       run: |
-        cd service_b
         gem install bundler
         bundle install --jobs 4 --retry 3
 
     - name: Set up database for Service B
+      working-directory: service_b
       run: |
-        cd service_b
         cp config/database.yml.ci config/database.yml
         bin/rails db:create
         bin/rails db:schema:load
 
     - name: Run tests for Service B
+      working-directory: service_b
       run: |
-        cd service_b
         bundle exec rspec
 
     - name: Run static analysis for Service B
+      working-directory: service_b
       run: |
-        cd service_b
         bundle exec rubocop
