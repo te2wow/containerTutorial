@@ -34,7 +34,7 @@ jobs:
     - name: Run tests for Service A
       working-directory: service_a
       run: |
-        bundle exec rspec
+        bin/rails test
 
     - name: Run static analysis for Service A
       working-directory: service_a
@@ -57,7 +57,7 @@ jobs:
     - name: Run tests for Service B
       working-directory: service_b
       run: |
-        bundle exec rspec
+        bin/rails test
 
     - name: Run static analysis for Service B
       working-directory: service_b
