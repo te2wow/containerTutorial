@@ -62,3 +62,8 @@ Style/RedundantParentheses:
 
 Style/SafeNavigation:
   Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false

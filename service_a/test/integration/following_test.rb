@@ -1,7 +1,6 @@
 require "test_helper"
 
 class Following < ActionDispatch::IntegrationTest
-
   def setup
     @user  = users(:michael)
     @other = users(:archer)
@@ -10,7 +9,6 @@ class Following < ActionDispatch::IntegrationTest
 end
 
 class FollowPagesTest < Following
-
   test "following page" do
     get following_user_path(@user)
     assert_response :success
@@ -33,7 +31,6 @@ class FollowPagesTest < Following
 end
 
 class FollowTest < Following
-
   test "should follow a user the standard way" do
     assert_difference "@user.following.count", 1 do
       post relationships_path, params: { followed_id: @other.id }
@@ -50,7 +47,6 @@ class FollowTest < Following
 end
 
 class Unfollow < Following
-
   def setup
     super
     @user.follow(@other)
@@ -59,7 +55,6 @@ class Unfollow < Following
 end
 
 class UnfollowTest < Unfollow
-
   test "should unfollow a user the standard way" do
     assert_difference "@user.following.count", -1 do
       delete relationship_path(@relationship)

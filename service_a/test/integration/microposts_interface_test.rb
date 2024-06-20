@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MicropostsInterface < ActionDispatch::IntegrationTest
-
   def setup
     @user = users(:michael)
     log_in_as(@user)
@@ -9,7 +8,6 @@ class MicropostsInterface < ActionDispatch::IntegrationTest
 end
 
 class MicropostsInterfaceTest < MicropostsInterface
-
   test "should paginate microposts" do
     get root_path
     assert_select 'div.pagination'
@@ -20,7 +18,7 @@ class MicropostsInterfaceTest < MicropostsInterface
       post microposts_path, params: { micropost: { content: "" } }
     end
     assert_select 'div#error_explanation'
-    assert_select 'a[href=?]', '/?page=2'  # 正しいページネーションリンク
+    assert_select 'a[href=?]', '/?page=2' # 正しいページネーションリンク
   end
 
   test "should create a micropost on valid submission" do
