@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  service_a:
+    build:
+      context: ./service_a
+    volumes:
+      - ./service_a:/app
+    ports:
+      - "8081:3000"
+    environment:
+      DATABASE_URL: sqlite3:db/development.sqlite3
+
+  service_b:
+    build:
+      context: ./service_b
+    volumes:
+      - ./service_b:/app
+    ports:
+      - "8082:3000"
+    environment:
+      DATABASE_URL: sqlite3:db/development.sqlite3
