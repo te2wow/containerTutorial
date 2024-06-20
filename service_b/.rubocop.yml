@@ -23,5 +23,42 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 15
 
-Style/StringLiterals:
+# 追加されたルール
+Layout/IndentationWidth:
+  Width: 4
+
+Layout/IndentationConsistency:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: false
+
+Style/SafeNavigation:
   Enabled: false
