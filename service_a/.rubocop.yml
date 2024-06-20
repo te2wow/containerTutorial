@@ -1,8 +1,21 @@
+# .rubocop.yml
 AllCops:
-  NewCops: enable 
-
-Style/StringLiterals:
-  Enabled: false
+  NewCops: enable
+  TargetRubyVersion: 2.7
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "lib/tasks/**/*"
+    - "bin/*"
+    - "config/environments/*"
+    - "config/initializers/**/*"
+    - "config/puma.rb"
+    - "public/**/*"
+    - "storage/**/*"
 
 Metrics/BlockLength:
   Max: 50
@@ -10,3 +23,5 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 15
 
+Style/StringLiterals:
+  Enabled: false
