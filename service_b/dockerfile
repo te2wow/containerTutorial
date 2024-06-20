@@ -1,0 +1,30 @@
+# ベースイメージを指定
+FROM ruby:3.2.3
+
+# Node.jsとYarnをインストール
+RUN apt-get update -qq && apt-get install -y nodejs yarn
+
+# 必要なパッケージをインストール
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  libpq-dev
+
+# アプリケーションディレクトリを作成
+WORKDIR /app
+
+# GemfileとGemfile.lockをコピー
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+
+# BundlerをインストールしてGemをインストール
+RUN gem install bundler
+RUN bundle install
+
+# アプリケーションのソースコードをコピー
+COPY . /app
+
+# ポートを指定
+EXPOSE 3000
+
+# サーバーを起動
+CMD ["rails", "server", "-b", "0.0.0.0"]
