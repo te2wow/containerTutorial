@@ -10,8 +10,8 @@ docker images
 docker tag service-a-image 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-a-image:latest
 docker tag service-b-image 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-b-image:latest
 # ECRにpush
-docker push 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-a-image
-docker push 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-b-image
+docker push 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-a-image:latest
+docker push 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-b-image:latest
 
 # kubectlを使ってdeploymentを再起動　
 kubectl rollout restart deployment service-a -n tetsuwo

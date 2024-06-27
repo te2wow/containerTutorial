@@ -23,6 +23,8 @@ RUN bundle install
 # アプリケーションのソースコードをコピー
 COPY . /app
 
+ENV ALLOWED_HOSTS=service-b.tetsuwo.svc.cluster.local
+
 # ポートを指定
 EXPOSE 3000
 
