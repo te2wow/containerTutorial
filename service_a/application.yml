@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-application
+  name: a-application
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/te2wow/containerTutorial.git'
     targetRevision: HEAD
-    path: '.'
+    path: './service_a'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
