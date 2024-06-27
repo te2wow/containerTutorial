@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: service-a-container
-        image: nginx:1.27.0 
+        image: 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-a-image:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000
