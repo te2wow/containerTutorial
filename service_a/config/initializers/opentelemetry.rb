@@ -10,9 +10,15 @@ OpenTelemetry::SDK.configure do |c|
   c.add_span_processor(
     OpenTelemetry::SDK::Trace::Export::BatchSpanProcessor.new(
       OpenTelemetry::Exporter::OTLP::Exporter.new(
-        endpoint: 'http://otel-collector-opentelemetry-collector.monitoring:4317', # OpenTelemetry Collectorのエンドポイント
-        insecure: true
+        endpoint: 'http://otel-collector-opentelemetry-collector.monitoring.svc.cluster.local:4317', # OpenTelemetry Collectorのエンドポイント
       )
     )
   )
+end
+
+tracer = OpenTelemetry.tracer_provider.tracer('example_tracer')
+
+tracer.in_span('doing_work') do |span|
+  # ここにトレースするコードを記述
+  puts 'Doing some work...'
 end
