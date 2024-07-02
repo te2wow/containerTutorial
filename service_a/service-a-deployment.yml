@@ -25,6 +25,6 @@ spec:
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
           value: "http://otel-collector-opentelemetry-collector.monitoring.svc.cluster.local:4318"
         - name: OTEL_SERVICE_NAME
-          value: "service-a"
+          value: "tetsuwo-service-a"
       imagePullSecrets:
         - name: ghcr-secret
