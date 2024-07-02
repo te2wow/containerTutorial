@@ -16,6 +16,7 @@ spec:
       containers:
       - name: service-b-container
         image: 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-b-image:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
