@@ -18,3 +18,10 @@ spec:
         image: 905418468932.dkr.ecr.us-east-1.amazonaws.com/service-b-image:latest
         ports:
         - containerPort: 3000
+    env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector-opentelemetry-collector.monitoring.svc.cluster.local:4318"
+        - name: OTEL_SERVICE_NAME
+          value: "service-b"
+        - name: RAILS_ENV
+          value: development
