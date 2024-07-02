@@ -18,6 +18,10 @@ gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec'
 gem 'whenever', require: false
+gem 'opentelemetry-sdk'
+gem 'opentelemetry-exporter-otlp'
+gem 'opentelemetry-instrumentation-all'
+
 
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
