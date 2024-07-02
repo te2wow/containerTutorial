@@ -23,3 +23,6 @@ spec:
           value: "http://otel-collector-opentelemetry-collector.monitoring.svc.cluster.local:4318"
         - name: OTEL_SERVICE_NAME
           value: "service-b"
+      imagePullSecrets:
+        - name: ghcr-secret
+
