@@ -23,9 +23,10 @@ gem 'whenever', require: false
 gem "sqlite3",                    "1.6.1"
 gem 'httparty'
 
-gem 'opentelemetry-sdk'
-gem 'opentelemetry-exporter-otlp'
-gem 'opentelemetry-instrumentation-all'
+gem "opentelemetry-sdk", "~> 1.4"
+gem "opentelemetry-instrumentation-all", "~> 0.61.0"
+
+gem "opentelemetry-exporter-otlp", "~> 0.28.0"
 
 
 group :development, :test do

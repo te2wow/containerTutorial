@@ -456,9 +456,9 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  opentelemetry-exporter-otlp
-  opentelemetry-instrumentation-all
-  opentelemetry-sdk
+  opentelemetry-exporter-otlp (~> 0.28.0)
+  opentelemetry-instrumentation-all (~> 0.61.0)
+  opentelemetry-sdk (~> 1.4)
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.4)
   rubocop
